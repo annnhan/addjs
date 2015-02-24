@@ -11,7 +11,7 @@ AddJS
 
 首先从chrome商店安装AddJS： <a target="_black" href="https://chrome.google.com/webstore/detail/addjs/aoahkpekljaimojhfefaiibfdcnmlhdi?hl=zh-CN">https://chrome.google.com/webstore/detail/addjs/aoahkpekljaimojhfefaiibfdcnmlhdi?hl=zh-CN</a>
 
-或者下载安装：<a href="http://cssha.com/download/addjs.crx">http://cssha.com/download/addjs.crx</a>
+或者下载安装：<a href="http://cssha.com/assets/download/addjs.crx">http://cssha.com/assets/download/addjs.crx</a>
 
 至此，AddJS就可以使用了。下面是一些基本功能的使用操作方法：
 
