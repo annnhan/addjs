@@ -14,14 +14,16 @@ var url = location.href;
         var self = this;
         chrome.storage.sync.get('scripts', function (data) {
             (data.scripts || []).forEach(function (item) {
-                if (item.reg) {
-                    if (new RegExp(item.req).test(url)) {
-                        self.append(item.res);
+                if (item.checked) {
+                    if (item.reg) {
+                        if (new RegExp(item.req).test(url)) {
+                            self.append(item.res);
+                        }
                     }
-                }
-                else {
-                    if (item.req == url) {
-                        self.append(item.res);
+                    else {
+                        if (item.req == url) {
+                            self.append(item.res);
+                        }
                     }
                 }
             });
