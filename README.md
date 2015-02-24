@@ -1,7 +1,7 @@
 AddJS
 =====
 
-AddJS是一个chrome插件。
+AddJS是一个chrome插件。view in [github](https://github.com/hanan198501/addjs)。
 
 在浏览网站的时候，常常会遇到恼人的广告，或者觉得某个网站图片太多，真想自己写写js来修改一下页面的内容。于是，就有了这个插件。
 
@@ -63,7 +63,6 @@ AddJS是一个chrome插件。
 *   **reg**：是否正则匹配
 *   **checked**：是否启用
 
- 
 
 **本插件开发过程中采用了以下开源项目，感谢支持：**
 
