@@ -1,0 +1,71 @@
+body {
+  min-width: 100%;
+}
+.top {
+  position: static !important;
+  padding-top: 8px;
+  margin-bottom: 0px !important;
+  color: #999999;
+}
+.fr {
+  float: right;
+  margin-right: 10px;
+}
+.table {
+  margin-top: 10px;
+}
+.table thead {
+  font-weight: bold;
+}
+.btnBox {
+  position: relative;
+}
+.btnBox .file {
+  width: 54px;
+  height: 34px;
+  overflow: hidden;
+  position: relative;
+}
+.btnBox .file input {
+  position: absolute;
+  width: 67px;
+  height: 994px;
+  bottom: 0px;
+  right: 0px;
+  opacity: 0;
+  cursor: pointer;
+}
+tr {
+  position: relative;
+}
+tr td {
+  position: relative;
+}
+tr td div {
+  width: 400px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+tr label {
+  height: 100%;
+}
+tr input {
+  position: relative;
+  top: 1px;
+}
+.editBox {
+  padding-top: 10px;
+  position: relative;
+}
+.editBox .close {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 1;
+}
+.errorMsg {
+  text-align: center;
+  color: red;
+}

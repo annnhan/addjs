@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html ng-app="reres">
+<head>
+    <meta charset="UTF-8">
+    <title>AddJS Options</title>
+    <link rel="icon" href="icon.png" mce_href="icon.png" type=”image/x-icon”>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/options.css"/>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/options.js"></script>
+</head>
+<body ng-controller="mapListCtrl">
+<div class="navbar navbar-inverse navbar-fixed-top top">
+    <div class="container">
+        <div class="btnBox">
+            <span class="h2"><a title="view in the github" href="https://github.com/hanan198501/addjs" target="_blank">AddJS</a></span>
+            <small></small>
+            <button class="btn btn-primary fr" ng-click="export()">导出</button>
+            <div class="file fr"><button class="btn btn-primary">导入</button><input type="file" id="jsonFile"/></div>
+            <button class="btn btn-primary fr" ng-click="addRule()"> + </button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div style="display:{{editDisplay}};" class="editBox">
+        <button type="button" class="close" aria-hidden="true" ng-click="hideEditBox()">&times;</button>
+        <div class="errorMsg">{{inputError}}</div>
+        <div class="form-group">
+            <label for="req">url:</label>
+            <input type="text" class="form-control" id="req" ng-model="curRule.req"/>
+            <label>
+                <input type="checkbox" id="reg" ng-model="curRule.reg"/> regexp
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="res">script:</label>
+            <textarea class="form-control" id="res" ng-model="curRule.res"></textarea>
+        </div>
+        <button class="btn-block btn btn-primary" ng-click="saveRule()">保存</button>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Enable</td>
+                <td>url</td>
+                <td>script</td>
+                <!--<td>Type</td>-->
+                <td>Operating</td>
+            </tr>
+        </thead>
+        <tboby>
+            <tr ng-repeat="rule in maps track by $index">
+                <td><input type="checkbox" ng-model="rule.checked"/></td>
+                <td><div title="{{rule.req}}">{{rule.req}}</div></td>
+                <td><div title="{{rule.res}}">{{rule.res}}</div></td>
+                <!--<td>{{rule.type == "file" ? "URL映射" : "目录映射"}}</td>-->
+                <td>
+                    <button ng-click="edit(rule)" type="button" class="btn btn-primary btn-xs edit">编辑</button>
+                    <button ng-click="removeUrl(rule)" type="button" class="btn btn-default btn-xs remove">删除</button>
+                </td>
+            </tr>
+        </tboby>
+    </table>
+
+</div>
+</body>
+</html>

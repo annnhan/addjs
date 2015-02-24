@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html ng-app="reres">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/popup.css"/>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/popup.js"></script>
+</head>
+<body ng-controller="mapListCtrl">
+<div class="container">
+<div class="btnBox">
+    <button tabIndex="-1" class="btn btn-primary btn-xs" ng-click="addRule()">添加脚本</button>
+    <a href="options.html" target="_blank" tabIndex="-1" class="btn btn-primary btn-xs">管理脚本</a>
+    <a href="https://github.com/hanan198501/runjs" target="_blank" tabIndex="-1" class="btn btn-primary btn-xs">Github</a>
+    <a href="http://cssha.com/runjs" target="_blank" tabIndex="-1" class="btn btn-primary btn-xs">使用帮助</a>
+</div>
+
+<div style="display:{{editDisplay}};" class="editBox">
+    <button type="button" class="close" aria-hidden="true" ng-click="hideEditBox()">&times;</button>
+    <div class="errorMsg">{{inputError}}</div>
+    <div class="form-inline">
+        <div class="form-group">
+            <label for="req">url:</label><br>
+            <input type="text" class="form-control" id="req" ng-model="curRule.req"/>
+            <label>
+                <input type="checkbox" id="reg" ng-model="curRule.reg"/>reg
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="res">script:</label>
+        <textarea class="form-control" id="res" ng-model="curRule.res"></textarea>
+    </div>
+    <button class="btn-block btn btn-primary" ng-click="saveRule()">save</button>
+</div>
+<table class="table table-hover">
+    <tr ng-repeat="rule in maps track by $index">
+        <td>
+            <label title="Responese: {{rule.res}}"><input type="checkbox" ng-model="rule.checked"/> {{rule.req}}</label>
+            <button ng-click="edit(rule)" type="button" class="btn btn-primary btn-xs edit">编辑</button>
+            <button ng-click="removeUrl(rule)" type="button" class="btn btn-default btn-xs remove">删除</button>
+        </td>
+    </tr>
+</table>
+
+</div>
+
+<p style="display: none;">{{time}}</p>
+</body>
+</html>

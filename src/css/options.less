@@ -1,0 +1,80 @@
+@mainWith: 100%;
+body {
+    min-width: @mainWith;
+}
+
+.top {
+    position: static !important;
+    padding-top: 8px;
+    margin-bottom: 0px !important;
+    color: #999999;
+}
+
+.fr {
+    float: right;
+    margin-right: 10px;
+}
+
+.table {
+    thead {
+        font-weight: bold;
+    }
+    margin-top: 10px;
+}
+
+.btnBox {
+
+    position: relative;
+    .file {
+        width: 54px;
+        height: 34px;
+        overflow: hidden;
+        position: relative;
+        input {
+            position: absolute;
+            width: 67px;
+            height: 994px;
+            bottom: 0px;
+            right: 0px;
+            opacity: 0;
+            cursor: pointer;
+        }
+    }
+}
+
+tr {
+    position: relative;
+    td {
+        position: relative;
+        div {
+            width: 400px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            word-break: break-all;
+        }
+    }
+    label {
+        height: 100%;
+    }
+    input {
+        position: relative;
+        top: 1px;
+    }
+}
+
+.editBox {
+    padding-top: 10px;
+    position: relative;
+    .close {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        z-index: 1;
+    }
+}
+
+.errorMsg {
+    text-align: center;
+    color: red;
+}
