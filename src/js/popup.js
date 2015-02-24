@@ -3,11 +3,6 @@ var reres = angular.module('reres', []);
 
 reres.controller('mapListCtrl', function ($scope, $timeout, $q) {
 
-    //保存规则数据到storage
-    function saveData() {
-        chrome.storage.sync.set({'scripts': $scope.maps}, function () {});
-    }
-
     // 获取数据
     (function () {
         var defer = $q.defer();
@@ -40,6 +35,11 @@ reres.controller('mapListCtrl', function ($scope, $timeout, $q) {
 
     //输入错误时候的警告
     $scope.inputError = '';
+
+    //保存规则数据到storage
+    $scope.saveData = function () {
+        chrome.storage.sync.set({'scripts': $scope.maps}, function () {});
+    }
 
     //隐藏编辑框
     $scope.hideEditBox = function () {
@@ -102,7 +102,7 @@ reres.controller('mapListCtrl', function ($scope, $timeout, $q) {
             } else {
 
             }
-            saveData();
+            $scope.saveData();
             $scope.hideEditBox();
         }
     };
@@ -115,6 +115,6 @@ reres.controller('mapListCtrl', function ($scope, $timeout, $q) {
                 break;
             }
         }
-        saveData();
+        $scope.saveData();
     }
 });

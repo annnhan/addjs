@@ -3,11 +3,6 @@ var reres = angular.module('reres', []);
 
 reres.controller('mapListCtrl', function($scope, $timeout, $q) {
 
-    //保存规则数据到storage
-    function saveData() {
-        chrome.storage.sync.set({'scripts': $scope.maps}, function () {});
-    }
-
     // 获取数据
     (function () {
         var defer = $q.defer();
@@ -37,6 +32,11 @@ reres.controller('mapListCtrl', function($scope, $timeout, $q) {
 
     //输入错误时候的警告
     $scope.inputError = '';
+
+    //保存规则数据到storage
+    $scope.saveData = function () {
+        chrome.storage.sync.set({'scripts': $scope.maps}, function () {});
+    }
 
     //隐藏编辑框
     $scope.hideEditBox = function () {
@@ -90,7 +90,7 @@ reres.controller('mapListCtrl', function($scope, $timeout, $q) {
             } else {
 
             }
-            saveData();
+            $scope.saveData();
             $scope.editDisplay = 'none';
         }
     };
@@ -102,7 +102,7 @@ reres.controller('mapListCtrl', function($scope, $timeout, $q) {
                 $scope.maps.splice(i, 1);
             }
         }
-        saveData();
+        $scope.saveData();
     }
 
     //导出
@@ -144,7 +144,7 @@ reres.controller('mapListCtrl', function($scope, $timeout, $q) {
                     for (var i = 0, len = data.length; i < len; i++) {
                         $scope.maps.push(data[i]);
                     }
-                    saveData();
+                    $scope.saveData();
                     location.reload();
                 } catch (e) {
                     alert("导入失败，请检查文件格式是否正确");
